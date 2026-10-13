@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea 3 - Computación en la Nube</title>
+  <style>
+    :root {
+      --primario: #2563eb;
+      --primario-oscuro: #1d4ed8;
+      --texto: #1f2937;
+      --texto-suave: #6b7280;
+      --fondo: #f9fafb;
+      --blanco: #ffffff;
+      --radio: 10px;
+      --sombra: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--texto);
+      background-color: var(--fondo);
+    }
+
+    .contenedor {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: var(--blanco);
+      box-shadow: var(--sombra);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .barra {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primario);
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--texto);
+      font-weight: 500;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--primario);
+      border-bottom-color: var(--primario);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primario), #7c3aed);
+      color: var(--blanco);
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .boton {
+      display: inline-block;
+      background-color: var(--blanco);
+      color: var(--primario);
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radio);
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .boton:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .titulo-seccion {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tarjeta {
+      background-color: var(--blanco);
+      border-radius: var(--radio);
+      padding: 1.75rem;
+      box-shadow: var(--sombra);
+      border-top: 4px solid var(--primario);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .tarjeta h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primario-oscuro);
+    }
+
+    .tarjeta p {
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: var(--texto);
+      color: #d1d5db;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .barra {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+
+      section {
+        padding: 2.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="contenedor barra">
+      <a href="#" class="logo">Tarea 3</a>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>Computación en la Nube y Microservicios</h1>
+    <p>Página web básica desplegada desde un repositorio público en GitHub usando un servicio de nube gratuito.</p>
+    <a href="#servicios" class="boton">Ver más</a>
+  </section>
+
+  <main>
+    <section id="servicios">
+      <div class="contenedor">
+        <h2 class="titulo-seccion">Servicios en la Nube</h2>
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <h3>Despliegue continuo</h3>
+            <p>La página se actualiza automáticamente cada vez que subes cambios al repositorio.</p>
+          </article>
+          <article class="tarjeta">
+            <h3>Hosting estático</h3>
+            <p>Ideal para HTML, CSS y JavaScript. No requiere servidor propio.</p>
+          </article>
+          <article class="tarjeta">
+            <h3>Repositorio público</h3>
+            <p>El código fuente está disponible en GitHub para su revisión.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="contenedor">
+        <h2 class="titulo-seccion">Contacto</h2>
+        <p style="text-align:center; color: var(--texto-suave);">
+          Estudiante: <strong>Tu Nombre</strong><br>
+          Correo: <strong>tucorreo@ejemplo.com</strong>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 - Tarea 3. Computación en la Nube y Microservicios.</p>
+  </footer>
+
+</body>
+</html>
